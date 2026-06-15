@@ -586,8 +586,8 @@
     initForm();
     initMisc();
 
-    particles($('#loaderParticles'), { count: 38 });
-    particles($('#ctaParticles'), { count: 50 });
+    particles($('#loaderParticles'), { count: 38, colors: ['#E4002B', '#FF7A1A', '#C8102E', '#FFFFFF'] });
+    particles($('#ctaParticles'), { count: 52, colors: ['#FFE49A', '#FFF3D0', '#FFD84D', '#FFFFFF'] });
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
