@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>FRITO MAX · El sabor que une a Colombia</title>
+  <meta name="description" content="FRITO MAX, pasabocas colombianos hechos con calidad, sabor e innovación. Papas, You Kitas, Chicharrón, Rosquitas Caleñísimas y Chips de Plátano. Conviértete en distribuidor." />
+  <meta name="theme-color" content="#0B0A0F" />
+  <meta name="author" content="FRITO MAX" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FRITO MAX · El sabor que une a Colombia" />
+  <meta property="og:description" content="Pasabocas premium hechos en Colombia. Descubre nuestro universo de sabores y conviértete en distribuidor." />
+  <meta property="og:image" content="assets/img/papas.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ CINEMATIC LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <canvas class="loader__particles" id="loaderParticles"></canvas>
+    <div class="loader__glow"></div>
+    <div class="loader__inner">
+      <div class="loader__stage">
+        <div class="loader__ring"></div>
+        <img class="loader__pack" src="assets/img/papas.webp" alt="" aria-hidden="true" />
+      </div>
+      <div class="loader__brand" id="loaderBrand">
+        <span class="logo logo--xl" aria-label="FRITO MAX">
+          <span class="logo__hat" aria-hidden="true">
+            <svg viewBox="0 0 64 48" width="100%" height="100%"><path d="M16 27a9 9 0 0 1 .8-17.9A11 11 0 0 1 47.2 9 9 9 0 0 1 48 27z" fill="currentColor"/><rect x="16" y="26" width="32" height="15" rx="3" fill="currentColor"/></svg>
+          </span>
+          <span class="logo__text"><b>FRITO</b><i>MAX</i></span>
+        </span>
+      </div>
+      <p class="loader__tagline">Preparando una experiencia llena de sabor…</p>
+      <div class="loader__bar" role="progressbar" aria-label="Cargando">
+        <span class="loader__fill" id="loaderFill"></span>
+      </div>
+      <span class="loader__pct" id="loaderPct">0%</span>
+    </div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__wrap">
+      <a href="#inicio" class="logo logo--nav" aria-label="FRITO MAX inicio">
+        <span class="logo__hat" aria-hidden="true">
+          <svg viewBox="0 0 64 48"><path d="M16 27a9 9 0 0 1 .8-17.9A11 11 0 0 1 47.2 9 9 9 0 0 1 48 27z" fill="currentColor"/><rect x="16" y="26" width="32" height="15" rx="3" fill="currentColor"/></svg>
+        </span>
+        <span class="logo__text"><b>FRITO</b><i>MAX</i></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Principal">
+        <a href="#productos">Productos</a>
+        <a href="#sabores">Sabores</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#galeria">Galería</a>
+        <a href="#distribuidores" class="nav__cta">Ser distribuidor</a>
+      </nav>
+
+      <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav__scrim" id="navScrim" hidden></div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__aurora hero__aurora--1"></div>
+        <div class="hero__aurora hero__aurora--2"></div>
+        <div class="hero__aurora hero__aurora--3"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__vignette"></div>
+      </div>
+
+      <!-- Floating product packs (parallax) -->
+      <div class="hero__packs" id="heroPacks" aria-hidden="true">
+        <figure class="pack" data-depth="0.10" style="--x:8%;  --y:20%; --s:.9;  --r:-8deg;">
+          <span class="pack__glow" style="--c:#FFC72C"></span>
+          <img src="assets/img/youkitas.webp" alt="" loading="eager" />
+        </figure>
+        <figure class="pack" data-depth="0.22" style="--x:80%; --y:20%; --s:1;   --r:7deg;">
+          <span class="pack__glow" style="--c:#E4002B"></span>
+          <img src="assets/img/chicharron.webp" alt="" loading="eager" />
+        </figure>
+        <figure class="pack" data-depth="0.16" style="--x:84%; --y:62%; --s:.92; --r:-5deg;">
+          <span class="pack__glow" style="--c:#2E9E5B"></span>
+          <img src="assets/img/platano.webp" alt="" loading="eager" />
+        </figure>
+        <figure class="pack" data-depth="0.30" style="--x:14%; --y:66%; --s:.86; --r:6deg;">
+          <span class="pack__glow" style="--c:#F59E0B"></span>
+          <img src="assets/img/olitas.webp" alt="" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow reveal">★ Hecho en Colombia con sabor de verdad</span>
+        <h1 class="hero__title reveal" data-reveal-delay="60">
+          EL SABOR QUE<br /><span class="grad-gold">UNE A COLOMBIA</span>
+        </h1>
+        <p class="hero__sub reveal" data-reveal-delay="140">
+          Pasabocas hechos con pasión, ingredientes de calidad y el toque crocante que
+          enamora a miles de familias. Más que snacks: un momento para compartir.
+        </p>
+        <div class="hero__cta reveal" data-reveal-delay="220">
+          <a href="#productos" class="btn btn--primary">
+            Explorar Productos
+            <svg viewBox="0 0 24 24" class="btn__ic"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#distribuidores" class="btn btn--ghost">Conviértete en Distribuidor</a>
+        </div>
+
+        <ul class="hero__chips reveal" data-reveal-delay="300">
+          <li><strong>+5</strong> años de sabor</li>
+          <li><strong>+10</strong> referencias</li>
+          <li><strong>+100</strong> puntos de venta</li>
+        </ul>
+      </div>
+
+      <a href="#productos" class="hero__scroll" aria-label="Desliza para ver más">
+        <span class="hero__mouse"><span></span></span>
+        Desliza
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack">
+        <span>You Kitas</span><span class="dot">•</span>
+        <span>Papas Olitas</span><span class="dot">•</span>
+        <span>Chicharrón</span><span class="dot">•</span>
+        <span>Rosquitas Caleñísimas</span><span class="dot">•</span>
+        <span>Chips de Plátano</span><span class="dot">•</span>
+        <span>Sabor que une a Colombia</span><span class="dot">•</span>
+      </div>
+    </div>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section class="section products" id="productos">
+      <div class="container">
+        <header class="head reveal">
+          <span class="head__kicker">Nuestro portafolio</span>
+          <h2 class="head__title">Productos <span class="grad-red">premium</span></h2>
+          <p class="head__lead">Cada referencia está pensada para sorprender al paladar. Pasa el cursor —o
+            toca en tu celular— y siente la textura de cada empaque.</p>
+        </header>
+
+        <div class="products__grid" id="productsGrid">
+          <!-- JS injects product cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FLAVOR UNIVERSE ============ -->
+    <section class="section flavors" id="sabores">
+      <div class="flavors__bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="head reveal">
+          <span class="head__kicker">Para todos los gustos</span>
+          <h2 class="head__title">Nuestro universo de <span class="grad-gold">sabores</span></h2>
+          <p class="head__lead">Siete personalidades, una misma promesa de calidad. Explora el sabor que
+            mejor te representa.</p>
+        </header>
+        <div class="flavors__grid" id="flavorsGrid">
+          <!-- JS injects flavor cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3D EXPERIENCE ============ -->
+    <section class="section experience" id="experiencia">
+      <div class="container">
+        <header class="head reveal">
+          <span class="head__kicker">Interactúa</span>
+          <h2 class="head__title">La experiencia <span class="grad-red">FRITO MAX</span></h2>
+          <p class="head__lead">Mueve el cursor sobre los empaques —o inclina tu teléfono— y míralos
+            reaccionar con luz, profundidad y sombras reales.</p>
+        </header>
+
+        <div class="experience__stage" id="experienceStage">
+          <!-- JS injects tilt cards -->
+        </div>
+        <p class="experience__hint reveal" id="experienceHint">Mueve el cursor sobre un empaque ✦</p>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / SOMOS + COUNTERS ============ -->
+    <section class="section about" id="nosotros">
+      <div class="container about__wrap">
+        <div class="about__text reveal">
+          <span class="head__kicker">Somos FRITO MAX</span>
+          <h2 class="head__title">Sabor con <span class="grad-gold">propósito</span></h2>
+          <p>Nacimos con una idea simple y poderosa: llevar a cada hogar colombiano pasabocas
+            irresistibles, hechos con ingredientes de calidad y mucho corazón. Hoy somos sinónimo
+            de frescura, innovación y confianza.</p>
+          <p>Cuidamos cada detalle —desde la selección de la materia prima hasta el empaque que
+            llega a tus manos— porque creemos que un buen momento empieza con un buen sabor.</p>
+          <ul class="about__values">
+            <li><span class="about__vIcon" data-ic="leaf"></span><div><strong>Calidad real</strong><small>Ingredientes seleccionados</small></div></li>
+            <li><span class="about__vIcon" data-ic="spark"></span><div><strong>Innovación</strong><small>Nuevos sabores siempre</small></div></li>
+            <li><span class="about__vIcon" data-ic="heart"></span><div><strong>Cercanía</strong><small>Hecho para tu familia</small></div></li>
+          </ul>
+        </div>
+
+        <div class="about__stats reveal" data-reveal-delay="120">
+          <article class="stat">
+            <span class="stat__num" data-count="50000" data-prefix="+" data-format="k">0</span>
+            <span class="stat__label">Clientes satisfechos</span>
+          </article>
+          <article class="stat">
+            <span class="stat__num" data-count="10" data-prefix="+">0</span>
+            <span class="stat__label">Referencias de producto</span>
+          </article>
+          <article class="stat">
+            <span class="stat__num" data-count="100" data-prefix="+">0</span>
+            <span class="stat__label">Puntos de distribución</span>
+          </article>
+          <article class="stat">
+            <span class="stat__num" data-count="5" data-prefix="+">0</span>
+            <span class="stat__label">Años llevando sabor</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <header class="head reveal">
+          <span class="head__kicker">Galería</span>
+          <h2 class="head__title">Antójate con la <span class="grad-red">vista</span></h2>
+          <p class="head__lead">Toca cualquier imagen para verla en grande.</p>
+        </header>
+        <div class="gallery__grid" id="galleryGrid">
+          <!-- JS injects gallery items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section testimonials" id="testimonios">
+      <div class="container">
+        <header class="head reveal">
+          <span class="head__kicker">Nos recomiendan</span>
+          <h2 class="head__title">Lo que dicen de <span class="grad-gold">nosotros</span></h2>
+        </header>
+        <div class="testi" id="testi">
+          <div class="testi__viewport">
+            <div class="testi__track" id="testiTrack"><!-- JS injects --></div>
+          </div>
+          <div class="testi__nav">
+            <button class="testi__arrow" id="testiPrev" aria-label="Anterior">
+              <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="testi__dots" id="testiDots"></div>
+            <button class="testi__arrow" id="testiNext" aria-label="Siguiente">
+              <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DISTRIBUTORS ============ -->
+    <section class="section distrib" id="distribuidores">
+      <div class="distrib__bg" aria-hidden="true"></div>
+      <div class="container distrib__wrap">
+        <div class="distrib__intro reveal">
+          <span class="head__kicker">Oportunidad de negocio</span>
+          <h2 class="head__title">Haz crecer tu negocio con <span class="grad-gold">FRITO MAX</span></h2>
+          <p class="head__lead">Un portafolio que se vende solo y un aliado que crece contigo.
+            Únete a nuestra red de distribuidores.</p>
+          <ul class="distrib__benefits">
+            <li><span class="bIcon" data-ic="rotate"></span><div><strong>Alta rotación</strong><small>Producto que vuela del estante</small></div></li>
+            <li><span class="bIcon" data-ic="coin"></span><div><strong>Excelente margen</strong><small>Rentabilidad comercial real</small></div></li>
+            <li><span class="bIcon" data-ic="truck"></span><div><strong>Entrega rápida</strong><small>Logística que no te falla</small></div></li>
+            <li><span class="bIcon" data-ic="grid"></span><div><strong>Portafolio variado</strong><small>+10 referencias y sabores</small></div></li>
+            <li><span class="bIcon" data-ic="star"></span><div><strong>Marca atractiva</strong><small>El consumidor ya la pide</small></div></li>
+          </ul>
+        </div>
+
+        <form class="distrib__form reveal" id="distribForm" data-reveal-delay="120" novalidate>
+          <h3 class="form__title">Solicita información comercial</h3>
+          <div class="field">
+            <label for="f-name">Nombre completo</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Tu nombre" />
+            <span class="field__err" data-err></span>
+          </div>
+          <div class="field">
+            <label for="f-business">Nombre del negocio</label>
+            <input id="f-business" name="business" type="text" placeholder="Tienda, supermercado, distribuidora…" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-city">Ciudad</label>
+              <input id="f-city" name="city" type="text" autocomplete="address-level2" required placeholder="Ej. Cali" />
+              <span class="field__err" data-err></span>
+            </div>
+            <div class="field">
+              <label for="f-phone">WhatsApp / Teléfono</label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="300 000 0000" />
+              <span class="field__err" data-err></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-email">Correo (opcional)</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" />
+            <span class="field__err" data-err></span>
+          </div>
+          <div class="field">
+            <label for="f-msg">¿Qué te gustaría distribuir?</label>
+            <textarea id="f-msg" name="message" rows="3" placeholder="Cuéntanos sobre tu negocio…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block" id="formSubmit">
+            Quiero ser distribuidor
+            <svg viewBox="0 0 24 24" class="btn__ic"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form__note">Te contactaremos por WhatsApp en menos de 24 horas.</p>
+          <div class="form__success" id="formSuccess" hidden>
+            <span class="form__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <strong>¡Solicitud enviada!</strong>
+            <span>Abrimos WhatsApp para finalizar. Si no se abrió, escríbenos directamente.</span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="cta" id="cta">
+      <canvas class="cta__particles" id="ctaParticles" aria-hidden="true"></canvas>
+      <div class="cta__bg" aria-hidden="true">
+        <div class="cta__beam cta__beam--1"></div>
+        <div class="cta__beam cta__beam--2"></div>
+      </div>
+      <div class="cta__packs" aria-hidden="true">
+        <img src="assets/img/papas.webp" alt="" class="cta__pack cta__pack--l" />
+        <img src="assets/img/youkitas.webp" alt="" class="cta__pack cta__pack--r" />
+      </div>
+      <div class="container cta__inner">
+        <h2 class="cta__title reveal">Lleva el sabor a<br /><span class="grad-gold">otro nivel</span></h2>
+        <p class="cta__sub reveal" data-reveal-delay="100">Pide tu pedido, hazte distribuidor o escríbenos.
+          El próximo gran momento empieza con FRITO MAX.</p>
+        <div class="cta__btns reveal" data-reveal-delay="180">
+          <a href="#productos" class="btn btn--primary">Ver productos</a>
+          <a href="#distribuidores" class="btn btn--gold">Ser distribuidor</a>
+          <a id="ctaWhats" href="#" class="btn btn--ghost">Contáctanos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__wrap">
+      <div class="footer__brand">
+        <a href="#top" class="logo logo--nav" aria-label="FRITO MAX">
+          <span class="logo__hat" aria-hidden="true">
+            <svg viewBox="0 0 64 48"><path d="M16 27a9 9 0 0 1 .8-17.9A11 11 0 0 1 47.2 9 9 9 0 0 1 48 27z" fill="currentColor"/><rect x="16" y="26" width="32" height="15" rx="3" fill="currentColor"/></svg>
+          </span>
+          <span class="logo__text"><b>FRITO</b><i>MAX</i></span>
+        </a>
+        <p>El sabor que une a Colombia. Pasabocas hechos con calidad, sabor e innovación.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram" class="soc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook" class="soc"><svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h2.5l.5-3H13V9c0-.6.4-1 1-1z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="TikTok" class="soc"><svg viewBox="0 0 24 24"><path d="M14 3c.3 2.2 1.8 3.9 4 4.2v3c-1.5 0-2.9-.5-4-1.3V15a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 1 0 1.7 2.3V3z" fill="currentColor"/></svg></a>
+          <a id="footWhats" href="#" aria-label="WhatsApp" class="soc"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3zm0 2a7 7 0 0 1 5.9 10.8l-.3.5.6 2.2-2.3-.6-.5.3A7 7 0 1 1 12 5zm-2.7 3.2c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3l-1.4-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.1-.3.2-.5.1-.7-.3-1.4-.6-2.1-1.5-.3-.4 0-.4.3-1 .1-.1 0-.3 0-.4l-.7-1.6c-.2-.4-.3-.4-.5-.4z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer__col" aria-label="Productos">
+        <h4>Productos</h4>
+        <a href="#productos">You Kitas</a>
+        <a href="#productos">Papas Olitas</a>
+        <a href="#productos">Chicharrón</a>
+        <a href="#productos">Rosquitas</a>
+        <a href="#productos">Chips de Plátano</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Empresa">
+        <h4>Empresa</h4>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#sabores">Sabores</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#distribuidores">Distribuidores</a>
+      </nav>
+
+      <div class="footer__col footer__contact">
+        <h4>Contacto</h4>
+        <a id="contactWhats" href="#"><span class="ci" data-ic="phone"></span>+57 300 000 0000</a>
+        <a href="mailto:hola@fritomax.com"><span class="ci" data-ic="mail"></span>hola@fritomax.com</a>
+        <span><span class="ci" data-ic="pin"></span>Colombia</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> FRITO MAX. Todos los derechos reservados.</span>
+      <span class="madein">Hecho con sabor en Colombia <svg viewBox="0 0 24 16" width="21" height="14" aria-hidden="true"><rect width="24" height="16" rx="2.5" fill="#FCD116"/><rect y="8" width="24" height="4" fill="#003893"/><rect y="12" width="24" height="4" fill="#CE1126"/></svg></span>
+    </div>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Visor de imagen">
+    <button class="lightbox__close" id="lbClose" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <button class="lightbox__arrow lightbox__arrow--prev" id="lbPrev" aria-label="Anterior">
+      <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <figure class="lightbox__stage" id="lbStage">
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="lightbox__arrow lightbox__arrow--next" id="lbNext" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

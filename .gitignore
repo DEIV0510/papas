@@ -1,0 +1,12 @@
+# Dependencies (heavy, platform-specific — regenerate with `npm install`)
+node_modules/
+
+# Intermediate image-processing artifacts (regenerable from assets/src)
+assets/cut/
+assets/_chich_crop.png
+
+# Tooling / OS
+.playwright-mcp/
+*.log
+Thumbs.db
+.DS_Store
