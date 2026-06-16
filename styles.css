@@ -33,7 +33,19 @@
   --sh-2: 0 26px 50px -18px rgba(120,50,10,.36);
   --sh-card: 0 18px 40px -16px rgba(150,70,15,.34);
 
+  --blue:   #1763C8;
+  --blue-2: #2E86E6;
+  --green-2:#36B34A;
+  --grape:  #7A3CC8;
+
   --halftone: radial-gradient(rgba(228,0,43,.07) 1.5px, transparent 1.6px);
+  --confetti:
+    radial-gradient(rgba(228,0,43,.14) 2px, transparent 2.7px),
+    radial-gradient(rgba(23,99,200,.13) 2px, transparent 2.7px),
+    radial-gradient(rgba(54,179,74,.13) 2px, transparent 2.7px),
+    radial-gradient(rgba(255,158,0,.16) 2px, transparent 2.7px);
+  --confetti-size: 52px 52px;
+  --confetti-pos: 0 0, 26px 15px, 13px 36px, 38px 24px;
 
   --r-sm: 14px;
   --r:    20px;
@@ -147,7 +159,7 @@ ul { list-style: none; padding: 0; }
 .hero__aurora--1 { width: 46vw; height: 46vw; left: -6vw; top: -4vw; background: radial-gradient(circle, rgba(255,199,44,.85), transparent 65%); animation: drift1 18s ease-in-out infinite; }
 .hero__aurora--2 { width: 42vw; height: 42vw; right: -8vw; top: 6vw; background: radial-gradient(circle, rgba(255,122,26,.6), transparent 65%); animation: drift2 22s ease-in-out infinite; }
 .hero__aurora--3 { width: 40vw; height: 40vw; left: 28vw; bottom: -14vw; background: radial-gradient(circle, rgba(228,0,43,.4), transparent 65%); animation: drift1 26s ease-in-out infinite reverse; }
-.hero__grid { position: absolute; inset: 0; background-image: var(--halftone); background-size: 18px 18px; mask-image: radial-gradient(ellipse 85% 75% at 50% 42%, #000, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 42%, #000, transparent 80%); opacity: .7; }
+.hero__grid { position: absolute; inset: 0; background-image: var(--confetti); background-size: var(--confetti-size); background-position: var(--confetti-pos); mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, #000, transparent 82%); -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, #000, transparent 82%); opacity: .9; }
 .hero__vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 42% at 50% 44%, rgba(255,255,255,.65), transparent 60%); }
 
 .hero__packs { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
@@ -203,15 +215,21 @@ ul { list-style: none; padding: 0; }
 .section { position: relative; padding-block: clamp(64px, 9vw, 128px); }
 .head { max-width: 760px; margin: 0 auto clamp(40px, 6vw, 66px); text-align: center; }
 .head__kicker { display: inline-block; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: .82rem; color: #fff; background: var(--red); padding: 6px 14px; border-radius: var(--pill); margin-bottom: 16px; transform: rotate(-1deg); }
+.flavors .head__kicker { background: var(--green-2); }
+.experience .head__kicker { background: var(--blue); }
+.about .head__kicker { background: var(--grape); }
+.gallery .head__kicker { background: var(--orange); }
+.testimonials .head__kicker { background: var(--blue-2); }
 .head__title { font-family: var(--ff-display); font-weight: 400; line-height: 1; font-size: clamp(2.1rem, 5.4vw, 4rem); letter-spacing: .01em; color: var(--ink); }
 .head__lead { color: var(--ink-soft); font-weight: 600; margin-top: 18px; font-size: 1.06rem; }
 
 /* ============================================================
    PRODUCTS
    ============================================================ */
-.products { background: var(--cream); background-image: var(--halftone); background-size: 20px 20px; }
+.products { background-color: #FFF4D6; background-image: var(--confetti); background-size: var(--confetti-size); background-position: var(--confetti-pos); }
 .products__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(18px, 2.4vw, 28px); }
 .pcard { position: relative; border-radius: var(--r-lg); padding: 16px; background: var(--paper); border: 2px solid var(--border); box-shadow: var(--sh-card); overflow: hidden; transition: transform .35s var(--ease), box-shadow .35s, border-color .35s; }
+.pcard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: var(--ac, var(--red)); z-index: 4; }
 .pcard:hover { transform: translateY(-10px) rotate(-.6deg); box-shadow: 0 34px 56px -20px rgba(150,70,15,.5); border-color: var(--ac, var(--red)); }
 .pcard__badge { position: absolute; top: 20px; right: 20px; z-index: 3; font-family: var(--ff-display); font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; color: #fff; padding: 8px 12px; background: var(--ac, var(--red)); border-radius: 12px; transform: rotate(4deg); box-shadow: 0 6px 14px -6px rgba(0,0,0,.4); }
 .pcard__stage { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 3.2; display: grid; place-items: center; background: radial-gradient(115% 95% at 50% 12%, #fff, #FFF1DA 70%, #FFE7C0); }
@@ -234,8 +252,8 @@ ul { list-style: none; padding: 0; }
 /* ============================================================
    FLAVOR UNIVERSE
    ============================================================ */
-.flavors { overflow: hidden; background: linear-gradient(180deg, #FFEFD2, #FFE3B8); }
-.flavors__bg { position: absolute; inset: 0; background: var(--halftone); background-size: 22px 22px; opacity: .5; }
+.flavors { overflow: hidden; background: linear-gradient(180deg, #E6F8EC, #D2F0DA); }
+.flavors__bg { position: absolute; inset: 0; background-image: var(--confetti); background-size: var(--confetti-size); background-position: var(--confetti-pos); opacity: .7; }
 .flavors__grid { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .fcard { position: relative; border-radius: var(--r-lg); padding: 26px 22px; min-height: 200px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; isolation: isolate; background: linear-gradient(155deg, var(--c1), var(--c2)); box-shadow: 0 16px 34px -16px var(--c2); border: 3px solid rgba(255,255,255,.6); transition: transform .35s var(--ease), box-shadow .35s; }
 .fcard::after { content: ''; position: absolute; right: -25%; top: -35%; width: 70%; height: 80%; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.5), transparent 62%); opacity: .6; transition: transform .5s var(--ease); z-index: -1; }
@@ -250,7 +268,7 @@ ul { list-style: none; padding: 0; }
 /* ============================================================
    3D EXPERIENCE
    ============================================================ */
-.experience { background: linear-gradient(180deg, #FFF3DA, #FFF8EC); }
+.experience { background: linear-gradient(180deg, #E7F1FF, #D4E6FF); }
 .experience__stage { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: clamp(16px, 2.5vw, 30px); perspective: 1100px; }
 .tilt { position: relative; border-radius: var(--r-lg); aspect-ratio: 3 / 3.4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 26px 20px; transform-style: preserve-3d; transform: rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); transition: transform .5s var(--ease); background: radial-gradient(120% 100% at 50% 0%, #fff, #FFF1DA); border: 2px solid var(--border); box-shadow: var(--sh-card); overflow: hidden; will-change: transform; }
 .tilt__halo { position: absolute; width: 80%; height: 70%; top: 10%; border-radius: 50%; background: radial-gradient(circle, var(--ac, var(--yellow)), transparent 60%); filter: blur(40px); opacity: .4; transform: translateZ(8px); }
@@ -263,7 +281,7 @@ ul { list-style: none; padding: 0; }
 /* ============================================================
    ABOUT + COUNTERS
    ============================================================ */
-.about { background: var(--cream); }
+.about { background-color: #FFF4D6; background-image: var(--confetti); background-size: var(--confetti-size); background-position: var(--confetti-pos); }
 .about__wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
 .about__text .head__title { text-align: left; }
 .about__text > p { color: var(--ink-soft); font-weight: 600; margin-top: 16px; font-size: 1.05rem; }
@@ -289,7 +307,7 @@ ul { list-style: none; padding: 0; }
 /* ============================================================
    GALLERY (masonry + lightbox)
    ============================================================ */
-.gallery { background: linear-gradient(180deg, var(--cream), #FFEFD2); background-image: var(--halftone); background-size: 20px 20px; }
+.gallery { background-color: #FFE7DA; background-image: var(--confetti); background-size: var(--confetti-size); background-position: var(--confetti-pos); }
 .gallery__grid { columns: 3; column-gap: 16px; }
 .gitem { position: relative; break-inside: avoid; margin-bottom: 16px; border-radius: var(--r); overflow: hidden; cursor: zoom-in; border: 2px solid var(--border); background: radial-gradient(115% 85% at 50% 0%, #fff, #FFF1DA 70%, #FFE7C0); box-shadow: var(--sh-card); }
 .gitem img { width: 100%; padding: 18px; filter: drop-shadow(0 14px 18px rgba(120,55,5,.35)); transition: transform .6s var(--ease); }
@@ -304,7 +322,7 @@ ul { list-style: none; padding: 0; }
 /* ============================================================
    TESTIMONIALS
    ============================================================ */
-.testimonials { background: linear-gradient(180deg, #FFEFD2, var(--cream)); }
+.testimonials { background: linear-gradient(180deg, #EAF0FF, #F3F0FF); }
 .testi { max-width: 920px; margin-inline: auto; }
 .testi__viewport { overflow: hidden; border-radius: var(--r-xl); }
 .testi__track { display: flex; transition: transform .6s var(--ease); }
